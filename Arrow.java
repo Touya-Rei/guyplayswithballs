@@ -10,6 +10,7 @@ public class Arrow extends Actor
     public void act()
     {
         loadImages();
+        animate(arrow);
     }
     
     void animate(GreenfootImage[] images)
@@ -29,11 +30,13 @@ public class Arrow extends Actor
     
     void loadImages()
     {
-        arrow= new GreenfootImage[7];
+        arrow= new GreenfootImage[6];
+        
+        
         for(int i= 0; i<arrow.length;i++)
         {
             String imgpath= "arrow/"+i+".png";
-
+            arrow[i]= new GreenfootImage(imgpath);
         }
         
         
