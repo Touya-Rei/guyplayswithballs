@@ -8,12 +8,38 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Arrow extends Actor
 {
-    /**
-     * Act - do whatever the Arrow wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    int animinterval= 10;
+    int framecounteranim= 0;
+    GreenfootImage [] arrow;
+    public load()
+    {
+        loadImages();
+    }
+    
     public void act()
     {
-        // Add your action code here.
+        
+    }
+    
+    void animate(GreenfootImage[] images)
+    {
+        if (framecounteranim >= images.length * animinterval)  // Greater or equal (>=) takes care of animations with different number of images.
+        {
+            framecounteranim = 0;
+        }
+        
+        if (framecounteranim % animinterval == 0)  // If it's time to switch to next animation image.
+        {
+            setImage(images[framecounteranim/animinterval]);
+        }
+        
+        framecounteranim++;
+    }
+    
+    void loadImages()
+    {
+        
+        
+        
     }
 }
