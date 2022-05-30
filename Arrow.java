@@ -1,24 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Arrow here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Arrow extends Actor
 {
     int animinterval= 10;
     int framecounteranim= 0;
     GreenfootImage [] arrow;
-    public load()
-    {
-        loadImages();
-    }
+    
     
     public void act()
     {
-        
+        loadImages();
     }
     
     void animate(GreenfootImage[] images)
@@ -38,7 +29,12 @@ public class Arrow extends Actor
     
     void loadImages()
     {
-        
+        arrow= new GreenfootImage[7];
+        for(int i= 0; i<arrow.length;i++)
+        {
+            String imgpath= "arrow/"+i+".png";
+
+        }
         
         
     }
