@@ -18,6 +18,17 @@ public class MyWorld extends World
             int random=  Greenfoot.getRandomNumber(2);
             switches[i]= new Switch();
             addObject(switches[i],x, y);
+            
+            for(int m= 0;m<2;i++)
+            {
+                int randorder=  Greenfoot.getRandomNumber(6);                    
+            }
+        
+                if(random==1)
+                {
+                    
+                }
+            
         }    
         
 
