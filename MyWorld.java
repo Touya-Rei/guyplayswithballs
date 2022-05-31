@@ -4,6 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
         Switch[] switches;
+    
     public MyWorld()
     {    
         super(600, 400, 1); 
@@ -18,9 +19,18 @@ public class MyWorld extends World
             int random=  Greenfoot.getRandomNumber(2);
             switches[i]= new Switch();
             addObject(switches[i],x, y);
-        }    
+            
+            
         
 
+            
+        }    
+        
+        for(int m= 0;m<3;m++)
+            {
+                int randorder=  Greenfoot.getRandomNumber(6);
+                switches[randorder].on=true;
+            }
         
             
 
