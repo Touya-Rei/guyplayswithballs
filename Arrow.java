@@ -11,6 +11,8 @@ public class Arrow extends Actor
     {
         loadImages();
         animate(arrow);
+        
+        
     }
     
     void animate(GreenfootImage[] images)
