@@ -5,6 +5,8 @@ public class MyWorld extends World
 {
     Switch[] switches;
     Arrow arrow;
+    int selection =0;
+    int  ind;
     
     public MyWorld()
     {    
@@ -30,18 +32,23 @@ public class MyWorld extends World
             int y= 200;
             int random=  Greenfoot.getRandomNumber(2);
             switches[i]= new Switch();
+            
+            
             addObject(switches[i],x, y);
-            System.out.println(""+x);
-                if (i%6==0)
+            int xloc=switches[i].getX();
+            System.out.println(""+xloc);
+            
+            
+            if (i%6==0)
             {
                 addObject(arrow,100+switches.length, 50);
                 
             }
             
-            
 
             
-        }    
+        }
+
         
         for(int m= 0;m<3;m++)
             {
@@ -58,13 +65,29 @@ public class MyWorld extends World
     
     public void act()
     {
-        if (arrow!=null&&Greenfoot.isKeyDown("d"))
+        
+        if (arrow!=null&&Greenfoot.isKeyDown("d")&&selection<=switches.length)
         {
-            arrow.setLocation(arrow.getX()+5, arrow.getY());                
+            
+            arrow.setLocation(arrow.getX()+10, arrow.getY());    
+            selection=selection+1;
+            System.out.println(arrow.getX());
         }
-        if (arrow!=null&&Greenfoot.isKeyDown("a"))
+        
+        
+        if (arrow!=null&&Greenfoot.isKeyDown("a")&&arrow.getX()>=switches.length)
         {
-            arrow.setLocation(arrow.getX()-5, arrow.getY());                
+            
+            arrow.setLocation(arrow.getX()-10, arrow.getY());    
+            selection=selection-1;
+            System.out.println(arrow.getX());
         }
+        
+        if(arrow.getX()<=127&&switches[selection].on==true)
+        {
+            switches[selection].on=false;
+        }
+        
+        
     }
 }

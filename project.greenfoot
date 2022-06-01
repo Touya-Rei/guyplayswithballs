@@ -1,14 +1,17 @@
 #Greenfoot project file
 class.MyWorld.image=granite-light.jpg
 dependency1.from=MyWorld
-dependency1.to=Switch
+dependency1.to=Arrow
 dependency1.type=UsesDependency
-editor.fx.0.height=744
-editor.fx.0.width=1382
-editor.fx.0.x=-8
-editor.fx.0.y=-8
+dependency2.from=MyWorld
+dependency2.to=Switch
+dependency2.type=UsesDependency
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
 height=744
-package.numDependencies=1
+package.numDependencies=2
 package.numTargets=3
 project.charset=UTF-8
 publish.hasSource=false

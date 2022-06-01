@@ -3,6 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Switch extends Actor
 {
+    Arrow arrow= new Arrow();
     boolean on= false;
     public void act()
     {
@@ -14,5 +15,8 @@ public class Switch extends Actor
         {
             setImage("lever/1.png");
         }
+        
     }
+    
+    
 }
