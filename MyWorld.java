@@ -65,11 +65,11 @@ public class MyWorld extends World
     
     public void act()
     {
-        selectioncond();
         
         
         
-        if (arrow!=null&&Greenfoot.isKeyDown("d")&&selection<=switches.length&&selection!=6)
+        
+        if (arrow!=null&&Greenfoot.isKeyDown("d")&&selection<switches.length-1)
         {
             selection=selection+1;
             arrow.setLocation(switches[selection].getX(),50);    
@@ -78,7 +78,7 @@ public class MyWorld extends World
         }
         
         
-        if (arrow!=null&&Greenfoot.isKeyDown("a")&&arrow.getX()>=switches.length&&selection!=0)
+        if (arrow!=null&&Greenfoot.isKeyDown("a")&&selection!=0)
         {
             selection=selection-1;
             arrow.setLocation(switches[selection].getX(), 50);    
@@ -91,7 +91,7 @@ public class MyWorld extends World
         if(Greenfoot.isKeyDown("enter"))
         {
             switches[selection].on=!switches[selection].on;
-            if(selection>0&&selection<7)
+            if(selection>0&&selection<switches.length-1)
             {
                 switches[selection+1].on=!switches[selection].on;
                 switches[selection-1].on=!switches[selection].on;
@@ -102,16 +102,5 @@ public class MyWorld extends World
         
     }
     
-    public void selectioncond()
-    {
-        if (selection>=5)
-        {
-            selection=6;
-        }
-        
-        if (selection<=0)
-        {
-            selection=0;
-        }
-    }
+    
 }
