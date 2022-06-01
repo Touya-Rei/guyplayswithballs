@@ -71,19 +71,19 @@ public class MyWorld extends World
         
         if (arrow!=null&&Greenfoot.isKeyDown("d")&&selection<=switches.length&&selection!=6)
         {
-            
-            arrow.setLocation(arrow.getX()+70*selection, arrow.getY());    
             selection=selection+1;
-            System.out.println(arrow.getX());
+            arrow.setLocation(switches[selection].getX(),50);    
+            
+            
         }
         
         
         if (arrow!=null&&Greenfoot.isKeyDown("a")&&arrow.getX()>=switches.length&&selection!=0)
         {
-            
-            arrow.setLocation(arrow.getX()-70*selection, arrow.getY());    
             selection=selection-1;
-            System.out.println(arrow.getX());
+            arrow.setLocation(switches[selection].getX(), 50);    
+            
+           
         }
         
         
@@ -91,7 +91,7 @@ public class MyWorld extends World
         if(Greenfoot.isKeyDown("enter"))
         {
             switches[selection].on=!switches[selection].on;
-            if(selection!=0)
+            if(selection>0&&selection<7)
             {
                 switches[selection+1].on=!switches[selection].on;
                 switches[selection-1].on=!switches[selection].on;
