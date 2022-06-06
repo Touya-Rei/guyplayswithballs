@@ -35,8 +35,7 @@ public class MyWorld extends World
             
             
             addObject(switches[i],x, y);
-            int xloc=switches[i].getX();
-            System.out.println(""+xloc);
+            
             
             
             if (i%6==0)
@@ -94,6 +93,14 @@ public class MyWorld extends World
             if(selection>0&&selection<switches.length-1)
             {
                 switches[selection+1].on=!switches[selection].on;
+                switches[selection-1].on=!switches[selection].on;
+            }
+            if(selection==0)
+            {
+                switches[selection+1].on=!switches[selection].on;
+            }
+            if(selection==switches.length-1)
+            {
                 switches[selection-1].on=!switches[selection].on;
             }
         }
